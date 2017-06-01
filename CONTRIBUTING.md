@@ -48,9 +48,34 @@ git pull upstream develop
 
 1. Pull the latest content from the `develop` branch of this central repository (not your fork).
 1. Create a feature branch which off the `develop` branch. The branch should be named the same as the JIRA issue you are working on (e.g., `SYNPY-1234`).
-1. After completing work and testing locally, push to your fork.
+1. After completing work and testing locally (see below), push to your fork.
 1. In Github, create a pull request from the feature branch of your fork to the develop branch of the central repository.
 
 > *A Sage Bionetworks engineer must review and accept your pull request.*
 
 The status of an issue can be tracked in JIRA. Once an issue has passed a code review with a Sage Bionetworks engineer, he/she will update it's status in JIRA appropriately.
+
+### Testing
+
+All code added to the client must have tests. These might include unit tests (to test specific functionality of code that was added to support fixing the bug or feature), integration tests (to test that the feature is usable - e.g., it should have complete the expected behavior as reported in the feature request or bug report), or both.
+
+The Python client uses [`nose`](http://nose.readthedocs.io/) to run tests. The test code is located in the [test](./test) subdirectory.
+
+Here's how to run the test suite:
+
+> *Note:* The entire set of tests takes approximately 20 minutes to run.
+
+```
+# Unit tests
+nosetests -vs tests/unit
+
+# Integration tests
+nosetests -vs tests/integration
+```
+
+To test a specific feature, specify the full path to the function to run:
+
+```
+# Test table query functionality from the command line client
+nosetests -vs tests/integration/test_command_line_client.py:test_table_query
+````
