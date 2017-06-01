@@ -2,7 +2,9 @@
 
 Welcome, and thanks for your interest in contributing to the Synapse Python client!
 
-## I don't want to read this whole thing I just have a question!!!
+By contributing, you are agreeing that we may redistribute your work under this [license](LICENSE.md).
+
+## I don't want to read this whole thing I just have a question!
 
 > **Note:** Please don't file an issue to ask a question. You'll get faster results by using the resources below.
 
@@ -11,20 +13,29 @@ We have an official forum and a detailed FAQ and where the community and maintai
 * [Synapse Help Forum](https://www.synapse.org/#!SynapseForum:default)
 * [Synapse FAQ](http://docs.synapse.org/articles/faq.html)
 
-## What should I know before I get started?
+## How to contribute
 
-### Doing some work
+### Reporting bugs or feature requests
 
-#### Get some work to do
-The open work items (bugs and new features) are tracked in JIRA .
+Bug reports and feature requests can be made in two ways. The first (preferred) method is by posting a question in the [Synapse Help Forum](https://www.synapse.org/#!SynapseForum:default). The second is by opening an [issue](https://github.com/Sage-Bionetworks/synapsePythonClient/issues) in this repository. In either case, providing enough details for the developers to verify and troubleshoot your issue is paramount:
 
-#### Fork and clone this repository
+* **Use a clear and descriptive title** for the issue to identify the problem.
+* **Describe the exact steps which reproduce the problem** in as many details as possible. If you are following examples from somewhere (e.g., the [Synapse Docs site](http://docs.synapse.org)) provide a link.
+* **Provide specific examples to demonstrate the steps**. Include copy/pasteable snippets. If you are providing snippets in the issue, use [Markdown code blocks](https://help.github.com/articles/markdown-basics/#multiple-lines).
+* **Describe the behavior you observed after following the steps** and point out what exactly is the problem with that behavior.
+* **Explain which behavior you expected to see instead and why.**
+
+After a bug report is received, expect a Sage Bionetworks staff member to contact you through the submission method you chose ([Synapse Help Forum](https://www.synapse.org/#!SynapseForum:default)or [Github issue](https://github.com/Sage-Bionetworks/synapsePythonClient/issues). After ascertaining there is enough detail for the bug report or feature request, a JIRA issue will be opened. If you want to work on fixing the issue or feature yourself, follow the next sections!
+
+### Fixing bugs and improvements
+
+The open work items (bugs and new features) are tracked in JIRA in the [SYNPY Project](https://sagebionetworks.jira.com/projects/SYNPY/issues).
+
+### Fork and clone this repository
 
 See the [Github docs](https://help.github.com/articles/fork-a-repo/) for how to make a copy (a fork) of a repository to your own Github account.
 
 Then, [clone the repository](https://help.github.com/articles/cloning-a-repository/) to your local machine so you can begin making changes.
-
-#### Create a feature branch
 
 On your local machine make sure you have the latest version of the `develop` branch:
 
@@ -33,17 +44,13 @@ git checkout develop
 git pull upstream develop
 ```
 
-The development life cycle is diagrammed above:
+### The development life cycle
+
 1. Pull the latest content from the `develop` branch of this central repository (not your fork).
-1. Create a feature branch which off the `develop` branch.
+1. Create a feature branch which off the `develop` branch. The branch should be named the same as the JIRA issue you are working on (e.g., `SYNPY-1234`).
 1. After completing work and testing locally, push to your fork.
 1. In Github, create a pull request from the feature branch of your fork to the develop branch of the central repository.
 
 > *A Sage Bionetworks engineer must review and accept your pull request.*
 
-
-```
-git checkout -b SYNPY-1234
-```
-
-By contributing, you are agreeing that we may redistribute your work under this [license](LICENSE.md).
+The status of an issue can be tracked in JIRA. Once an issue has passed a code review with a Sage Bionetworks engineer, he/she will update it's status in JIRA appropriately.
